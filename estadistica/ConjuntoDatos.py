@@ -142,17 +142,15 @@ class ConjuntoDatos:
         maximo = datosOrdenados[-1]
         caracteresOrdinales = f"{self.totalObservaciones}".__len__()
         caracteresObservaciones = f"{maximo}".__len__()
-        if mostrar:
-            print("Datos ordenados:")
-            for i in range(datosOrdenados.__len__()):
-                datoTexto = f"{(i+1)}".rjust(caracteresOrdinales)+".- "+f"{datosOrdenados[i]}".rjust(caracteresObservaciones)
-                if i == 0 or i == self.totalObservaciones - 1:
-                    datoTexto += " * "
-                print(datoTexto)
+        print("Datos ordenados:")
+        for i in range(datosOrdenados.__len__()):
+            datoTexto = f"{(i+1)}".rjust(caracteresOrdinales)+".- "+f"{datosOrdenados[i]}".rjust(caracteresObservaciones)
+            if i == 0 or i == self.totalObservaciones - 1:
+                datoTexto += " * "
+            print(datoTexto)
         rango = maximo - minimo
-        if mostrar:
-            print("Rango:")
-            print(f"{maximo} - {minimo} = {rango}")
+        print("Rango:")
+        print(f"{maximo} - {minimo} = {rango}")
         return rango
 
     def varianza(self, mostrar: bool = True) -> float:
